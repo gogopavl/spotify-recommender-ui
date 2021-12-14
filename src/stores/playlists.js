@@ -8,7 +8,7 @@ const fetchPlaylists = async () => {
   const response = await fetch(url, {
     headers: {
       Authorization:
-        "Bearer BQC_I6WZUp5G2GT4SjitWFiZe_ZNzT8wK8VTddT-LRwiU_X308O2NRoVvwhHSzLu-xPHFx2MT-L8pyxlMceo8bWpnuLzXhtbJ-0Yibe40PPBwFO15U8uiAi45BBM7kzrLRZAKXjka7xmb670tnszW9_q5zrRZrsoIYFBeQ",
+        "Bearer BQDUMIU9nSr_xENCFhZ7D5pXvUl7aK8JSYs8W74tyHfemosLAkqlXohL04oqGCbaABSuzduVIbFylRKwG6FAeHvtThaEv3hwtkYchCsrRmL8VKFex-Gz8X41Q4sOAmCht88riU63YGBsBkFzVgR7qS_nTNS4j5BCy0SiRA",
     },
   });
   const data = await response.json();
@@ -19,7 +19,6 @@ const fetchPlaylists = async () => {
       image: data.images[0]?.url,
     };
   });
-  debugger;
   playlists.set(fetchedPlaylists);
 };
 
