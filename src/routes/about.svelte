@@ -1,8 +1,10 @@
 <script>
+  import Heading from "../components/heading.svelte";
+  const PAGE_NAME = "About";
 </script>
 
 <svelte:head>
-  <title>Spotify Playlist Recommender - About</title>
+  <title>Spotify Playlist Recommender - {PAGE_NAME}</title>
 </svelte:head>
 
-<h1 class="text-4xl text-center my-8 uppercase">About</h1>
+<Heading heading={PAGE_NAME} />

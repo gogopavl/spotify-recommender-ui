@@ -5,7 +5,7 @@
     const response = await fetch(url, {
       headers: {
         Authorization:
-          "Bearer BQDUMIU9nSr_xENCFhZ7D5pXvUl7aK8JSYs8W74tyHfemosLAkqlXohL04oqGCbaABSuzduVIbFylRKwG6FAeHvtThaEv3hwtkYchCsrRmL8VKFex-Gz8X41Q4sOAmCht88riU63YGBsBkFzVgR7qS_nTNS4j5BCy0SiRA",
+          "Bearer BQB59HZ7kBCrGBAK8J93sf9dKlk-JRdNgezUKisafE0v7epXbVOt6TS6KcHVZy3CSd5FNM_b_Dypy86pqiJdzYI8eH6SmjkTX7luj8QCMvwr-3u-SMJL1Hr3fcM-VCxMoEsvqU9hjc0T7uZ3eg5CcCyWrmJjMDNZpY20-3kDY0I",
       },
     });
     const playlist = await response.json();
