@@ -1,17 +1,17 @@
 <script>
+  import { fade } from "svelte/transition";
   export let playlist;
 </script>
 
 <a
-  class="p-6 bg-gray-100 text-gray-800 text-center rounded-md shadow-sm hover:shadow-md flex flex-col items-center"
+  class="p-6 bg-slate-700 text-slate-100 text-center rounded-md shadow-sm hover:bg-slate-600 flex flex-col items-center"
   href={`/playlists/${playlist.id}`}
 >
-  <div class="bg-indigo-300 drop-shadow-xl">
+  <div class="bg-slate-700 drop-shadow-xl" transition:fade>
     <img
       class="object-cover h-48 w-48 rounded-2xl"
       src={playlist.image}
       alt="{playlist.name} playlist cover"
-      width="200px"
     />
   </div>
 
