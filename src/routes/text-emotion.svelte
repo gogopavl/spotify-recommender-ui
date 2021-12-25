@@ -11,10 +11,6 @@
 
 <Heading heading={PAGE_NAME} />
 
-<div
-  class="p-4 gap-4 grid grid-cols-1 justify-items-center max-w-xl mx-auto"
-  style="border: solid;"
->
+<div class="p-4 gap-4 grid grid-cols-1 justify-items-center max-w-xl mx-auto">
   <TextInput />
-  <!-- <p>Text search!</p> -->
 </div>

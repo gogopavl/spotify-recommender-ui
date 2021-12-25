@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <link rel="icon" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spotify Playlist Recommender - Playlists</title>
+
+		
+
+		<link rel="modulepreload" href="/_app/start-334a15f8.js">
+		<link rel="modulepreload" href="/_app/chunks/vendor-73c04143.js">
+		<link rel="modulepreload" href="/_app/pages/__layout.svelte-963210e8.js">
+		<link rel="modulepreload" href="/_app/pages/playlists.svelte-df5f7c4c.js">
+		<link rel="modulepreload" href="/_app/chunks/heading-4038fcdd.js">
+		<link rel="stylesheet" href="/_app/assets/start-d5b4de3e.css">
+		<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-36b78f93.css">
+
+		<script type="module">
+			import { start } from "/_app/start-334a15f8.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"","assets":""},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/_app/pages/__layout.svelte-963210e8.js"),
+						import("/_app/pages/playlists.svelte-df5f7c4c.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "\u002Fplaylists",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+  </head>
+
+  <body>
+    <div id="svelte">
+
+
+<div class="p-8 max-w-6xl mx-auto"><nav class="flex justify-center w-full"><a class="mx-4 text-lg" href="/">Home</a>
+  <a class="mx-4 text-lg" href="/playlists">Playlists</a>
+  <a class="mx-4 text-lg" href="/about">About</a></nav>
+  
+
+<h1 class="text-4xl text-center my-8 uppercase">Playlists</h1>
+
+<div class="p-4 grid gap-4 lg:grid-cols-4 md:grid-cols-3 grid-cols-1"></div>
+</div>
+
+
+
+			
+		</div>
+  </body>
+</html>

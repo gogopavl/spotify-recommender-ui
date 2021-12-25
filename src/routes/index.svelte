@@ -13,7 +13,6 @@
 
 <div
   class="p-4 gap-4 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 justify-items-center max-w-xl mx-auto"
-  style="border: solid;"
 >
   <BigButton
     buttonLink="/text-emotion"

@@ -1,4 +1,6 @@
 <script>
+  import { debug } from "svelte/internal";
+
   import Heading from "../components/heading.svelte";
 
   const PAGE_NAME = "Gimmimage";
@@ -12,6 +14,21 @@
     reader.onload = (e) => {
       avatar = e.target.result;
     };
+
+    let rawDataReader = new FileReader();
+    rawDataReader.onload = async function () {
+      const url = "http://localhost:8080/spotify-recommender/v1/analyses";
+
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/octet-stream",
+        },
+        body: new Uint8Array(rawDataReader.result),
+      }).then((response) => console.log(response.json()));
+      debugger;
+    };
+    rawDataReader.readAsArrayBuffer(image);
   };
 </script>
 
@@ -21,10 +38,7 @@
 
 <Heading heading={PAGE_NAME} />
 
-<div
-  class="p-4 gap-4 grid grid-cols-1 justify-items-center max-w-xl mx-auto"
-  style="border: solid;"
->
+<div class="p-4 gap-4 grid grid-cols-1 justify-items-center max-w-xl mx-auto">
   {#if avatar}
     <img
       class="avatar avatar object-cover h-60 w-60 rounded-2xl"

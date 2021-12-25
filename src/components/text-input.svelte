@@ -9,11 +9,19 @@
     }
   };
 
-  function handleSubmission() {
-    // handle event
-    // will hit the API
+  async function handleSubmission() {
     alert("button event handler " + inputText);
-    goto("/", { replaceState: false });
+    // goto("/", { replaceState: false });
+    const url = "http://localhost:8080/spotify-recommender/v1/analyses";
+    const payload = JSON.stringify({ text: inputText });
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: payload,
+    }).then((response) => console.log(response.json()));
+    debugger;
   }
 </script>
 
