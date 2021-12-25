@@ -1,5 +1,6 @@
 <script>
   import { goto } from "$app/navigation";
+  import { emotionAnalysisStore } from "../stores/emotion-analysis";
   $: inputText = "";
 
   const onKeyPress = (e) => {
@@ -9,11 +10,21 @@
     }
   };
 
-  function handleSubmission() {
-    // handle event
-    // will hit the API
-    alert("button event handler " + inputText);
-    goto("/", { replaceState: false });
+  async function handleSubmission() {
+    const url = "https://spotify-recommender.pvlrs.com/spotify-recommender/v1/analyses";
+    const payload = JSON.stringify({ text: inputText });
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: payload,
+    });
+    const emotionAnalysis = await response.json();
+    emotionAnalysisStore.set(emotionAnalysis);
+    goto(`/playlists/${emotionAnalysis.overallSentiment}`, {
+      replaceState: false,
+    });
   }
 </script>
 

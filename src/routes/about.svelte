@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-  <title>Spotify Playlist Recommender - {PAGE_NAME}</title>
+  <title>Moodify - {PAGE_NAME}</title>
 </svelte:head>
 
 <Heading heading={PAGE_NAME} />

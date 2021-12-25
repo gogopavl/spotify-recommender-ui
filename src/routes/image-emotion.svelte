@@ -1,4 +1,7 @@
 <script>
+  import { goto } from "$app/navigation";
+  import { emotionAnalysisStore } from "../stores/emotion-analysis";
+
   import Heading from "../components/heading.svelte";
 
   const PAGE_NAME = "Gimmimage";
@@ -12,6 +15,26 @@
     reader.onload = (e) => {
       avatar = e.target.result;
     };
+
+    let rawDataReader = new FileReader();
+    rawDataReader.onload = async function () {
+      const url = "https://spotify-recommender.pvlrs.com/spotify-recommender/v1/analyses";
+
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/octet-stream",
+        },
+        body: new Uint8Array(rawDataReader.result),
+      });
+      const emotionAnalysis = await response.json();
+      emotionAnalysisStore.set(emotionAnalysis);
+
+      goto(`/playlists/${emotionAnalysis.overallSentiment}`, {
+        replaceState: false,
+      });
+    };
+    rawDataReader.readAsArrayBuffer(image);
   };
 </script>
 
@@ -21,10 +44,7 @@
 
 <Heading heading={PAGE_NAME} />
 
-<div
-  class="p-4 gap-4 grid grid-cols-1 justify-items-center max-w-xl mx-auto"
-  style="border: solid;"
->
+<div class="p-4 gap-4 grid grid-cols-1 justify-items-center max-w-xl mx-auto">
   {#if avatar}
     <img
       class="avatar avatar object-cover h-60 w-60 rounded-2xl"

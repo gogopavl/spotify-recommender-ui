@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <link rel="icon" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spotify Playlist Recommender - Gimmimage</title>
+
+		
+
+		<link rel="modulepreload" href="/_app/start-43793f45.js">
+		<link rel="modulepreload" href="/_app/chunks/vendor-d433336e.js">
+		<link rel="modulepreload" href="/_app/chunks/singletons-12a22614.js">
+		<link rel="modulepreload" href="/_app/pages/__layout.svelte-a5e7631a.js">
+		<link rel="modulepreload" href="/_app/pages/image-emotion.svelte-df74a3cc.js">
+		<link rel="modulepreload" href="/_app/chunks/navigation-51f4a605.js">
+		<link rel="modulepreload" href="/_app/chunks/emotion-analysis-79ddfa51.js">
+		<link rel="modulepreload" href="/_app/chunks/heading-76e10e82.js">
+		<link rel="stylesheet" href="/_app/assets/start-d5b4de3e.css">
+		<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-8f1b1a52.css">
+		<link rel="stylesheet" href="/_app/assets/pages/image-emotion.svelte-00dd8e91.css">
+
+		<script type="module">
+			import { start } from "/_app/start-43793f45.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"","assets":""},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/_app/pages/__layout.svelte-a5e7631a.js"),
+						import("/_app/pages/image-emotion.svelte-df74a3cc.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "\u002Fimage-emotion",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+  </head>
+
+  <body>
+    <div id="svelte">
+
+
+<div class="p-8 max-w-6xl mx-auto"><nav class="flex justify-center w-full"><a class="mx-4 text-lg" href="/">Home</a>
+  <a class="mx-4 text-lg" href="/playlists">Playlists</a>
+  <a class="mx-4 text-lg" href="/about">About</a></nav>
+  
+
+<h1 class="text-4xl text-center my-8 uppercase">Gimmimage</h1>
+
+<div class="p-4 gap-4 grid grid-cols-1 justify-items-center max-w-xl mx-auto"><svg xmlns="http://www.w3.org/2000/svg" class="h-60 w-60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+  <div id="upload-button" class="grid justify-items-center svelte-ctkggw"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+    <p>Choose Image</p></div>
+  <input style="display:none" type="file" accept=".jpg, .jpeg, .png">
+</div>
+</div>
+
+
+
+			
+		</div>
+  </body>
+</html>
