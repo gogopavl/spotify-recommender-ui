@@ -45,7 +45,7 @@
 <Heading
   heading={PAGE_NAME}
   slangText="Gimmimage = gimme (give me) + image"
-  helpText="express yourself with a selfy or upload a photo of a face"
+  helpText="express yourself with a selfie or upload a photo of a face"
 />
 
 <div

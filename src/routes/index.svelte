@@ -12,7 +12,7 @@
 <Heading
   heading={PAGE_NAME}
   slangText="Gimmemotion = gimme (give me) + emotion"
-  helpText="Express your emotions through text or a selfy; we'll analyze the sentiment associated with your input & recommended a spotify playlist"
+  helpText="Express your emotions through text or a selfie; we'll analyze the sentiment associated with your input & recommended a spotify playlist"
 />
 
 <div

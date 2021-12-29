@@ -8,7 +8,11 @@
     emotionAnalysis = value;
     Object.entries(value).forEach(([key, value]) => {
       if (value && key !== "userMessage") {
-        emotions.push({ key: key, value: value });
+        if (key === "overallSentiment") {
+          emotions.push({ key: "overall sentiment", value: value });
+        } else {
+          emotions.push({ key: key, value: value });
+        }
       }
     });
   });
