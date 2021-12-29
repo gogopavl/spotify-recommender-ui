@@ -19,4 +19,9 @@
     color: white;
     background-color: #1e293b;
   }
+
+  :global(.debug) {
+    border: solid 2px;
+    border-color: red;
+  }
 </style>

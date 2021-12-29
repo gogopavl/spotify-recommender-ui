@@ -1,8 +1,8 @@
 <script>
   import { goto } from "$app/navigation";
-  import { emotionAnalysisStore } from "../stores/emotion-analysis";
-
   import Heading from "../components/heading.svelte";
+  import { environmentVariables } from "../environment/variables";
+  import { emotionAnalysisStore } from "../stores/emotion-analysis";
 
   const PAGE_NAME = "Gimmimage";
 
@@ -18,7 +18,7 @@
 
     let rawDataReader = new FileReader();
     rawDataReader.onload = async function () {
-      const url = "https://spotify-recommender.pvlrs.com/spotify-recommender/v1/analyses";
+      const url = `${environmentVariables.RECOMMENDER_BASE_PATH}/spotify-recommender/v1/analyses`;
 
       const response = await fetch(url, {
         method: "POST",

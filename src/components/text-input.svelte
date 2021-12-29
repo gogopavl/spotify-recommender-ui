@@ -1,5 +1,6 @@
 <script>
   import { goto } from "$app/navigation";
+  import { environmentVariables } from "../environment/variables";
   import { emotionAnalysisStore } from "../stores/emotion-analysis";
   $: inputText = "";
 
@@ -11,7 +12,7 @@
   };
 
   async function handleSubmission() {
-    const url = "https://spotify-recommender.pvlrs.com/spotify-recommender/v1/analyses";
+    const url = `${environmentVariables.RECOMMENDER_BASE_PATH}/spotify-recommender/v1/analyses`;
     const payload = JSON.stringify({ text: inputText });
     const response = await fetch(url, {
       method: "POST",

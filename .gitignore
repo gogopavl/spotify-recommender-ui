@@ -24,6 +24,7 @@ _actual*.*
 _output
 /types
 
+/build
 .svelte-kit/
 /site/.svelte-kit/
 /site/build/

@@ -1,12 +1,13 @@
 <script context="module">
   export async function load({ page }) {
-    const url = "https://spotify-recommender.pvlrs.com/spotify-recommender/v1/playlists";
+    const url = `${environmentVariables.RECOMMENDER_BASE_PATH}/spotify-recommender/v1/playlists`;
     const response = await fetch(url);
     const data = await response.json();
     const fetchedPlaylists = data.items.map((data, index) => {
       return {
         id: data.id,
         name: data.name,
+        emotions: data.emotions,
         imageUrl: data.imageUrl,
         spotifyUrl: data.spotifyUrl,
       };
@@ -18,6 +19,7 @@
 <script>
   import Heading from "../components/heading.svelte";
   import Playlist from "../components/playlist.svelte";
+  import { environmentVariables } from "../environment/variables";
 
   const PAGE_NAME = "Playlists";
 
@@ -31,7 +33,7 @@
 <Heading heading={PAGE_NAME} />
 
 <div
-  class="p-4 grid gap-4 lg:grid-cols-4 md:grid-cols-3 grid-cols-1 justify-items-center"
+  class="grid gap-8 lg:grid-cols-4 md:grid-cols-3 grid-cols-1 justify-items-center"
 >
   {#each playlists as playlist}
     <Playlist {playlist} />

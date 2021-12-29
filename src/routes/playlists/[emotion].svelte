@@ -1,7 +1,7 @@
 <script context="module">
   export async function load({ page }) {
     const emotion = page.params.emotion;
-    const url = `https://spotify-recommender.pvlrs.com/spotify-recommender/v1/playlists/${emotion}`;
+    const url = `${environmentVariables.RECOMMENDER_BASE_PATH}/spotify-recommender/v1/playlists/${emotion}`;
     const response = await fetch(url);
     const playlist = await response.json();
     return { props: { playlist } };
@@ -11,6 +11,7 @@
 <script>
   import Heading from "../../components/heading.svelte";
   import Playlist from "../../components/playlist.svelte";
+  import { environmentVariables } from "../../environment/variables";
   import { emotionAnalysisStore } from "../../stores/emotion-analysis";
 
   const PAGE_NAME = "Recommended Playlist";
