@@ -33,7 +33,7 @@
 <Heading heading={PAGE_NAME} />
 
 <div
-  class="grid gap-8 lg:grid-cols-4 md:grid-cols-3 grid-cols-1 justify-items-center"
+  class="max-w-5xl grid gap-8 lg:grid-cols-4 md:grid-cols-3 grid-cols-1 justify-items-center mx-auto"
 >
   {#each playlists as playlist}
     <Playlist {playlist} />

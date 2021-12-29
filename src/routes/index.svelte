@@ -9,10 +9,14 @@
   <title>Moodify - {PAGE_NAME}</title>
 </svelte:head>
 
-<Heading heading={PAGE_NAME} />
+<Heading
+  heading={PAGE_NAME}
+  slangText="Gimmemotion = gimme (give me) + emotion"
+  helpText="Express your emotions through text or a selfy; we'll analyze the sentiment associated with your input & recommended a spotify playlist"
+/>
 
 <div
-  class="p-4 gap-4 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 justify-items-center max-w-xl mx-auto"
+  class="min-h-[50vh] max-w-4xl p-6 flex md:flex-row flex-col justify-center items-center justify-items-center mx-auto"
 >
   <BigButton
     buttonLink="/text-emotion"

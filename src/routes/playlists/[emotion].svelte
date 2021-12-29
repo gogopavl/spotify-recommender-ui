@@ -9,6 +9,7 @@
 </script>
 
 <script>
+  import EmotionModal from "../../components/emotion-modal.svelte";
   import Heading from "../../components/heading.svelte";
   import Playlist from "../../components/playlist.svelte";
   import { environmentVariables } from "../../environment/variables";
@@ -16,6 +17,7 @@
 
   const PAGE_NAME = "Recommended Playlist";
 
+  let emotionModal;
   let emotionAnalysis;
 
   emotionAnalysisStore.subscribe((value) => {
@@ -31,10 +33,20 @@
 
 <Heading heading={PAGE_NAME} />
 
-<p class="text-xl text-center my-8 lowercase">
-  {emotionAnalysis.userMessage}
-</p>
+<div class="min-h-[50vh]">
+  <div
+    class="mt-8 flex flex-row items-center justify-center justify-items-center"
+  >
+    <p class="text-xl text-center lowercase">
+      {emotionAnalysis.userMessage}
+    </p>
 
-<div class="p-4 grid gap-4 grid-cols-1 justify-items-center">
-  <Playlist {playlist} />
+    <EmotionModal />
+  </div>
+
+  <div
+    class="p-4 flex flex-row items-center justify-center justify-items-center"
+  >
+    <Playlist {playlist} />
+  </div>
 </div>

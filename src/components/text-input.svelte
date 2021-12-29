@@ -29,12 +29,14 @@
   }
 </script>
 
-<div class="flex">
+<div
+  class="flex flex-row items-center justify-items-center justify-center max-h-12"
+>
   <input
     id="text-input"
     on:keypress={onKeyPress}
     bind:value={inputText}
-    class="p-2 text-slate-700 rounded-lg"
+    class="p-2 text-slate-700 rounded-lg min-w-full"
     type="text"
     placeholder="Start typing..."
     name="given-text"

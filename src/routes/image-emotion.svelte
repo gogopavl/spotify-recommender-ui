@@ -39,12 +39,18 @@
 </script>
 
 <svelte:head>
-  <title>Spotify Playlist Recommender - {PAGE_NAME}</title>
+  <title>Moodify - {PAGE_NAME}</title>
 </svelte:head>
 
-<Heading heading={PAGE_NAME} />
+<Heading
+  heading={PAGE_NAME}
+  slangText="Gimmimage = gimme (give me) + image"
+  helpText="express yourself with a selfy or upload a photo of a face"
+/>
 
-<div class="p-4 gap-4 grid grid-cols-1 justify-items-center max-w-xl mx-auto">
+<div
+  class="min-h-[50vh] max-w-4xl p-4 flex flex-col justify-items-center justify-center items-center mx-auto"
+>
   {#if avatar}
     <img
       class="avatar avatar object-cover h-60 w-60 rounded-2xl"

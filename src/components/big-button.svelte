@@ -5,7 +5,7 @@
 </script>
 
 <button
-  class="big-button m-4 text-slate-50 bg-emerald-500 hover:bg-emerald-400 rounded-full h-60 w-60"
+  class="big-button m-2 text-slate-50 bg-emerald-500 hover:bg-emerald-400 rounded-full h-52 w-52"
   ><a href={buttonLink}
     ><svg
       class="h-20 w-20 m-auto"
