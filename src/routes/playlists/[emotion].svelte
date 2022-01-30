@@ -1,6 +1,6 @@
 <script context="module">
-  export async function load({ page }) {
-    const emotion = page.params.emotion;
+  export async function load({ params }) {
+    const emotion = params.emotion;
     const url = `${environmentVariables.RECOMMENDER_BASE_PATH}/spotify-recommender/v1/playlists/${emotion}`;
     const response = await fetch(url);
     const playlist = await response.json();

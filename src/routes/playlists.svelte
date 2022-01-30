@@ -1,5 +1,5 @@
 <script context="module">
-  export async function load({ page }) {
+  export async function load() {
     const url = `${environmentVariables.RECOMMENDER_BASE_PATH}/spotify-recommender/v1/playlists`;
     const response = await fetch(url);
     const data = await response.json();
