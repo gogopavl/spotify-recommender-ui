@@ -17,7 +17,6 @@
 
   const PAGE_NAME = "Recommended Playlist";
 
-  let emotionModal;
   let emotionAnalysis;
 
   emotionAnalysisStore.subscribe((value) => {

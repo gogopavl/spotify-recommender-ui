@@ -1,6 +1,17 @@
 <script>
   import Nav from "../components/nav.svelte";
+  import { onMount } from "svelte";
+
+  let pageHasLoaded = false;
+
+  onMount(() => {
+    pageHasLoaded = true;
+  });
 </script>
+
+{#if !pageHasLoaded}
+  <div class="loader"><img src="/spinner.svg" alt="" /></div>
+{/if}
 
 <div class="p-8 max-w-6xl mx-auto">
   <Nav />
@@ -23,5 +34,17 @@
   :global(.debug) {
     border: solid 2px;
     border-color: red;
+  }
+
+  :global(.loader) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: grid;
+    place-items: center;
+    background-color: #1e293b;
+    z-index: 9999;
   }
 </style>
